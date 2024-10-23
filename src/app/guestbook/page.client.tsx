@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { useForm } from "@conform-to/react";
-import { parseWithZod } from "@conform-to/zod";
-import { Button, Textarea } from "@nextui-org/react";
-import { useFormState } from "react-dom";
+import { useForm } from '@conform-to/react';
+import { parseWithZod } from '@conform-to/zod';
+import { Button, Textarea } from '@nextui-org/react';
+import { useFormState } from 'react-dom';
 
-import { InsertGuestbookEntrySchema } from "@/db/schema/guestbook-entries";
+import { InsertGuestbookEntrySchema } from '@/db/schema/guestbookEntries';
 
-import { createGuestbookEntry } from "./actions";
+import { createGuestbookEntry } from './actions';
 
 export default function GuestbookClient() {
   const [lastResult, action] = useFormState(createGuestbookEntry, undefined);
@@ -16,8 +16,8 @@ export default function GuestbookClient() {
     onValidate({ formData }) {
       return parseWithZod(formData, { schema: InsertGuestbookEntrySchema });
     },
-    shouldValidate: "onBlur",
-    shouldRevalidate: "onInput",
+    shouldValidate: 'onBlur',
+    shouldRevalidate: 'onInput',
   });
   return (
     <form

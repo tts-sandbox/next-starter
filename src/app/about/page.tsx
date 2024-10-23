@@ -4,9 +4,9 @@ export default async function Home() {
   return (
     <Card className="mx-auto mt-4 max-w-md">
       <CardBody className="text-center">
-        <h1 className="text-5xl">Home Page</h1>
+        <h1 className="text-5xl">About Page</h1>
         <br />
-        <p className="text-xl">A simple starter for Next.js</p>
+        <p className="text-xl">Tell everyone a little about yourself.</p>
       </CardBody>
     </Card>
   );

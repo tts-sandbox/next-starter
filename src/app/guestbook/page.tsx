@@ -4,11 +4,11 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
-} from "@nextui-org/react";
+} from '@nextui-org/react';
 
-import db from "@/db";
+import db from '@/db';
 
-import GuestbookClient from "./page.client";
+import GuestbookClient from './page.client';
 
 export default async function GuestBook() {
   const entries = await db.query.guestbookEntries.findMany({

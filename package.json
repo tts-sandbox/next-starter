@@ -1,16 +1,23 @@
 {
-  "name": "next-start",
+  "name": "next-starter",
   "version": "0.1.0",
+  "author": {
+    "name": "Wayne Ritchie",
+    "email": "wayne@writchie.dev",
+    "url": "https://writchie.dev"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "restart": "pnpm run build && pnpm run start",
     "lint": "next lint",
-    "format": "prettier src/ --write",
+    "prettier:check": "prettier src/ --check",
+    "prettier:write": "prettier src/ --write",
     "db:migrate": "cross-env DB_MIGRATING=true drizzle-kit migrate"
   },
   "dependencies": {
-    "@auth/drizzle-adapter": "^1.6.1",
+    "@auth/drizzle-adapter": "^1.7.2",
     "@conform-to/react": "^1.2.2",
     "@conform-to/zod": "^1.2.2",
     "@nextui-org/react": "^2.4.8",
@@ -37,7 +44,7 @@
     "@types/react-dom": "^18",
     "cross-env": "^7.0.3",
     "drizzle-kit": "^0.24.2",
-    "eslint": "^8",
+    "eslint": "^8.57.1",
     "eslint-config-next": "14.2.14",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-check-file": "^2.8.0",
@@ -48,5 +55,6 @@
     "tailwindcss": "^3.4.13",
     "typescript": "^5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "packageManager": "pnpm@9.1.2"
 }

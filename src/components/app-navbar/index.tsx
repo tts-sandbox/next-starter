@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 import {
   Link,
@@ -11,12 +11,12 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from "@nextui-org/react";
-import { IconPackage } from "@tabler/icons-react";
-import { useSession } from "next-auth/react";
+} from '@nextui-org/react';
+import { IconPackage } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
 
-import AuthButton from "./auth-button";
-import { ThemeSwitcher } from "./theme-switcher";
+import AuthButton from './authButton';
+import { ThemeSwitcher } from './themeSwitcher';
 
 export default function AppNavbar() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -24,20 +24,24 @@ export default function AppNavbar() {
 
   const menuItems = [
     {
-      label: "Home",
-      href: "/",
+      label: 'Home',
+      href: '/',
+    },
+    {
+      label: 'About',
+      href: '/about',
     },
   ];
 
-  if (status === "authenticated") {
+  if (status === 'authenticated') {
     menuItems.push(
       {
-        label: "Profile",
-        href: "/profile",
+        label: 'Profile',
+        href: '/profile',
       },
       {
-        label: "Guestbook",
-        href: "/guestbook",
+        label: 'Guestbook',
+        href: '/guestbook',
       }
     );
   }
@@ -46,7 +50,7 @@ export default function AppNavbar() {
     <Navbar onMenuOpenChange={setIsMenuOpen}>
       <NavbarContent>
         <NavbarMenuToggle
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           className="sm:hidden"
         />
         <NavbarBrand>

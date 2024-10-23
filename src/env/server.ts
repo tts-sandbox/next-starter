@@ -1,13 +1,13 @@
-import { createEnv } from "@t3-oss/env-nextjs";
-import { config } from "dotenv";
-import { expand } from "dotenv-expand";
-import { ZodError, z } from "zod";
+import { createEnv } from '@t3-oss/env-nextjs';
+import { config } from 'dotenv';
+import { expand } from 'dotenv-expand';
+import { ZodError, z } from 'zod';
 
 expand(config());
 
 export const env = createEnv({
   server: {
-    NODE_ENV: z.enum(["development", "production"]),
+    NODE_ENV: z.enum(['development', 'production']),
     NEXTAUTH_URL: z.string().url(),
     NEXTAUTH_SECRET: z.string(),
     GOOGLE_CLIENT_ID: z.string(),
@@ -20,13 +20,13 @@ export const env = createEnv({
     DATABASE_URL: z.string().url(),
     DB_MIGRATING: z
       .string()
-      .refine((s) => s === "true" || s === "false")
-      .transform((s) => s === "true")
+      .refine((s) => s === 'true' || s === 'false')
+      .transform((s) => s === 'true')
       .optional(),
   },
   onValidationError: (error: ZodError) => {
     console.error(
-      "❌ Invalid environment variables:",
+      '❌ Invalid environment variables:',
       error.flatten().fieldErrors
     );
     process.exit(1);

@@ -5,12 +5,12 @@
     "prefer-arrow-callback": ["error"],
     "prefer-template": ["error"],
     "semi": ["error"],
-    "quotes": ["error", "double"],
+    "quotes": ["error", "single"],
     "n/no-process-env": ["error"],
     "check-file/filename-naming-convention": [
       "error",
       {
-        "**/*.{ts,tsx}": "KEBAB_CASE"
+        "**/*.{ts,tsx}": "CAMEL_CASE"
       },
       {
         "ignoreMiddleExtensions": true

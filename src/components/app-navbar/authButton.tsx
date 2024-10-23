@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Avatar,
@@ -8,21 +8,21 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from "@nextui-org/react";
-import { IconBrandGoogle } from "@tabler/icons-react";
-import { signIn, signOut, useSession } from "next-auth/react";
+} from '@nextui-org/react';
+import { IconBrandGoogle } from '@tabler/icons-react';
+import { signIn, signOut, useSession } from 'next-auth/react';
 
 export default function AuthButton({ minimal = true }: { minimal?: boolean }) {
   const { data, status } = useSession();
 
-  if (status === "loading") {
+  if (status === 'loading') {
     return <CircularProgress aria-label="Loading authentication status..." />;
   }
 
-  if (status === "authenticated") {
+  if (status === 'authenticated') {
     const signOutClick = () =>
       signOut({
-        callbackUrl: "/",
+        callbackUrl: '/',
       });
     if (minimal) {
       return (
@@ -41,7 +41,7 @@ export default function AuthButton({ minimal = true }: { minimal?: boolean }) {
             as="button"
             className="transition-transform"
             showFallback={!data.user?.image}
-            src={data.user?.image || ""}
+            src={data.user?.image || ''}
           />
         </DropdownTrigger>
         <DropdownMenu aria-label="Profile Actions" variant="flat">
@@ -60,8 +60,8 @@ export default function AuthButton({ minimal = true }: { minimal?: boolean }) {
   return (
     <Button
       onClick={() =>
-        signIn("google", {
-          callbackUrl: "/profile",
+        signIn('google', {
+          callbackUrl: '/profile',
         })
       }
       color="danger"

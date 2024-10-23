@@ -1,17 +1,17 @@
-"use server";
+'use server';
 
-import { revalidatePath } from "next/cache";
-import { redirect } from "next/navigation";
+import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 
-import { parseWithZod } from "@conform-to/zod";
-import { getServerSession } from "next-auth";
+import { parseWithZod } from '@conform-to/zod';
+import { getServerSession } from 'next-auth';
 
-import options from "@/config/auth";
-import db from "@/db";
+import options from '@/config/auth';
+import db from '@/db';
 import guestbookEntries, {
   InsertGuestbookEntrySchema,
-} from "@/db/schema/guestbook-entries";
-import requireAuth from "@/utils/require-auth";
+} from '@/db/schema/guestbookEntries';
+import requireAuth from '@/utils/requireAuth';
 
 export async function createGuestbookEntry(
   prevState: unknown,
@@ -22,7 +22,7 @@ export async function createGuestbookEntry(
     schema: InsertGuestbookEntrySchema,
   });
 
-  if (submission.status !== "success") {
+  if (submission.status !== 'success') {
     return submission.reply();
   }
 
@@ -33,6 +33,6 @@ export async function createGuestbookEntry(
     message: submission.value.message,
   });
 
-  revalidatePath("/guestbook");
-  redirect("/guestbook");
+  revalidatePath('/guestbook');
+  redirect('/guestbook');
 }

@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
-import { Suspense } from "react";
+import type { Metadata } from 'next';
+import { Suspense } from 'react';
 
-import AppNavbar from "@/components/app-navbar";
-import Providers from "@/components/providers";
+import AppNavbar from '@/components/app-navbar';
+import Providers from '@/components/providers';
 
-import "./globals.css";
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Next.js Starter App",
-  description: "A basic starter for next.js",
+  title: 'Next.js Starter App',
+  description: 'A basic starter for next.js',
 };
 
 export default function RootLayout({

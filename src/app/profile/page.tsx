@@ -1,8 +1,8 @@
-import { Card, CardBody, User } from "@nextui-org/react";
-import { getServerSession } from "next-auth";
+import { Card, CardBody, User } from '@nextui-org/react';
+import { getServerSession } from 'next-auth';
 
-import options from "@/config/auth";
-import requireAuth from "@/utils/require-auth";
+import options from '@/config/auth';
+import requireAuth from '@/utils/requireAuth';
 
 export default async function Profile() {
   await requireAuth();
@@ -16,7 +16,7 @@ export default async function Profile() {
           description={session.user?.email}
           avatarProps={{
             showFallback: !session.user?.image,
-            src: session.user?.image || "",
+            src: session.user?.image || '',
           }}
         />
       </CardBody>

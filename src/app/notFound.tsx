@@ -1,5 +1,5 @@
-import { Card, CardBody } from "@nextui-org/react";
-import { IconFileUnknown } from "@tabler/icons-react";
+import { Card, CardBody } from '@nextui-org/react';
+import { IconFileUnknown } from '@tabler/icons-react';
 
 export default function NotFound() {
   return (
