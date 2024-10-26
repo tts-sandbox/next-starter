@@ -45,7 +45,7 @@
     "cross-env": "^7.0.3",
     "drizzle-kit": "^0.24.2",
     "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.14",
+    "eslint-config-next": "15.0.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-check-file": "^2.8.0",
     "eslint-plugin-n": "^17.11.1",
