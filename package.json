@@ -1,6 +1,6 @@
 {
   "name": "next-starter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Wayne Ritchie",
     "email": "wayne@writchie.dev",
@@ -29,7 +29,7 @@
     "drizzle-zod": "^0.5.1",
     "framer-motion": "^11.11.10",
     "jiti": "^2.3.3",
-    "next": "14.2.14",
+    "next": "^15.0.2",
     "next-auth": "^4.24.10",
     "next-themes": "^0.3.0",
     "postgres": "^3.4.5",
