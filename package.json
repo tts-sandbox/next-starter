@@ -1,6 +1,7 @@
 {
   "name": "next-starter",
-  "version": "0.1.5",
+  "description": "A simple Next.js starter template with auth.",
+  "version": "0.2.0",
   "author": {
     "name": "Wayne Ritchie",
     "email": "wayne@writchie.dev",
@@ -39,7 +40,7 @@
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/node": "^22.8.5",
+    "@types/node": "^22.8.6",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "cross-env": "^7.0.3",
@@ -56,5 +57,5 @@
     "typescript": "^5.6.3"
   },
   "license": "MIT",
-  "packageManager": "pnpm@9.1.2"
+  "packageManager": "pnpm@9.12.3"
 }
