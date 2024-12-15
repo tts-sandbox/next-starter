@@ -1,5 +1,5 @@
 services:
-  db:
+  pg-db:
     image: postgres:16.4
     environment:
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -8,4 +8,28 @@ services:
     ports:
       - ${DB_PORT}:5432
     volumes:
-      - ./docker-data/db:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
+      # - ./docker-data/db:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  nextjs-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - ${APP_PORT}:3000
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DATABASE_URL=postgres://${DB_USER}:${DB_PASSWORD}@pg-db:${DB_PORT}/${DB_NAME}
+    networks:
+      - app-network
+    depends_on:
+      - pg-db
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
